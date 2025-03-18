@@ -52,6 +52,8 @@ func Menu() {
 		case 10:
 		case 11:
 		case 0:
+			fmt.Println("Exiting...")
+			return
 		}
 	}
 }
