@@ -29,9 +29,9 @@ func (animal Animal) setType(t string) {
 func newAnimal() Animal {
 	var name, t string
 	var coll int
-	fmt.Println("Enter plant name: ")
+	fmt.Println("Enter animal name: ")
 	fmt.Scan(&name)
-	fmt.Println("Enter plant coll: ")
+	fmt.Println("Enter animal coll: ")
 	fmt.Scan(&coll)
 	fmt.Println("Enter type: ")
 	fmt.Scan(&t)

@@ -13,7 +13,6 @@ func Menu() {
 	fmt.Println("8. Remove Animal")
 	fmt.Println("9. Save Ecosystem")
 	fmt.Println("10. Load Ecosystem")
-	fmt.Println("11. Check if animal can eat plant")
 	fmt.Println("0. Exit")
 	for {
 		var choice int
@@ -49,8 +48,17 @@ func Menu() {
 			fmt.Scanln(&id)
 			removeAnimal(id - 1)
 		case 9:
+			var save string
+			fmt.Print("Saves: ")
+			fmt.Scanln(&save)
+			err := saveEcosystem(save)
+			if err != nil {
+				fmt.Println("Error saving ecosystem:", err)
+			} else {
+				fmt.Println("Ecosystem saved successfully!")
+			}
 		case 10:
-		case 11:
+
 		case 0:
 			fmt.Println("Exiting...")
 			return
