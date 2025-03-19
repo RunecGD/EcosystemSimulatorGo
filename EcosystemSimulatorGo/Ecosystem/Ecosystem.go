@@ -52,16 +52,28 @@ func saveEcosystem(filename string) error {
 
 	data += "Plants:\n"
 	for _, plant := range plants {
-		data += fmt.Sprintf("Name: %s, Coll: %d\n", plant.Name, plant.Coll)
+		data += fmt.Sprintf("Name: %s, Coll: %d\n",
+			plant.Name, plant.Coll)
 	}
 
 	data += "\nAnimals:\n"
 	for _, animal := range animals {
-		data += fmt.Sprintf("Name: %s, Coll: %d, Type: %s\n", animal.Name, animal.Coll, animal.Type)
+		data += fmt.Sprintf("Name: %s, Coll: %d, Type: %s\n",
+			animal.Name,
+			animal.Coll,
+			animal.Type)
 	}
 
 	path := filepath.Join("Saves", filename)
 	return os.WriteFile(path,
 		[]byte(data),
 		0644)
+}
+func createFolderSaves() {
+	err := os.Mkdir("Saves", 0755) // 0755 – права доступа
+	if err != nil {
+		fmt.Println("Error creating folder:", err)
+		return
+	}
+	fmt.Println("Folder created successfully.")
 }

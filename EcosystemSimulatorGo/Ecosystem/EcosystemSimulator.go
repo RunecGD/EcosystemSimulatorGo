@@ -3,6 +3,7 @@ package Ecosystem
 import "fmt"
 
 func Menu() {
+	createFolderSaves()
 	fmt.Println("1. Add Plant")
 	fmt.Println("2. View Plants")
 	fmt.Println("3. Update Plant")
